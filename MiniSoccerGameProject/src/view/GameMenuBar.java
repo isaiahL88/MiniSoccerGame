@@ -7,7 +7,7 @@ import java.awt.event.KeyEvent;
 public class GameMenuBar extends JMenuBar {
 
 	public GameMenuBar(ActionListener menubarListener) {
-		super();
+		super();//t
 		JMenu gameMenu = new JMenu("Game");
 		gameMenu.add(createMenuItem("New game", "NEW", KeyEvent.VK_N, menubarListener));
 		gameMenu.addSeparator();
