@@ -1,21 +1,26 @@
 package model.players;
 
 import java.util.Iterator;
+import java.util.List;
 
-public class PlayerCollectionIterator implements Iterator<PlayerCollection>{
+public class PlayerCollectionIterator implements Iterator<GamePlayer>{
+	List<GamePlayer> players;
+	int current;
+	int cap;
 	PlayerCollectionIterator(PlayerCollection players){
-		
+		this.players = players.getList();
+		cap = players.getList().size();
+		current = 0;
 	}
 	
 	public boolean hasNext() {
-		return false;	
+		return this.current < this.cap;	
 	}
 	
-	public PlayerCollection next() {
-		return null;
+	public GamePlayer next() {
+		GamePlayer next = (GamePlayer) this.players.get(current);
+		this.current++;
+		return next;
 	}
 	
-	public void remove(){
-		
-	}
 }

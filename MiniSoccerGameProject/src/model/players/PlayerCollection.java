@@ -5,14 +5,14 @@ import java.util.Iterator;
 import java.util.List;
 
 
-public class PlayerCollection implements Iterable{
+public class PlayerCollection implements Iterable<GamePlayer>{
 	private List<GamePlayer> players;
 	
-	PlayerCollection(){
+	public PlayerCollection(){
 		players = new ArrayList<GamePlayer>();
 	}
 	
-	public void addPlayer(GamePlayer player) {
+	public void add(GamePlayer player) {
 		this.players.add(player);
 	}
 	
@@ -21,12 +21,28 @@ public class PlayerCollection implements Iterable{
 	}
 	
 	public GamePlayer get(String playerType) {
-		PlayerCollectionIterator itr = new PlayerCollectionIterator(this.players);
+		GamePlayer curPlayer;
+		PlayerCollectionIterator itr = new PlayerCollectionIterator(this);
+		while(itr.hasNext()) {
+			curPlayer = itr.next();
+			if(curPlayer.getPlayerName().equals(playerType)) {
+				return curPlayer;
+			}
+		}
+		return null;
 		
+	}
+	
+	public List<GamePlayer >getList() {
+		return this.players;
 	}
 
 	@Override
-	public Iterator<PlayerCollection> iterator() {
+	public Iterator<GamePlayer> iterator() {
 		return new PlayerCollectionIterator(this);
+	}
+
+	public void sort() {
+		this.players.sort(null);
 	}
 }
