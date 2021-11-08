@@ -25,7 +25,8 @@ public class PlayerCollection implements Iterable<GamePlayer>{
 		PlayerCollectionIterator itr = new PlayerCollectionIterator(this);
 		while(itr.hasNext()) {
 			curPlayer = itr.next();
-			if(curPlayer.getPlayerName().equals(playerType)) {
+			System.out.println("curPlayer: " + curPlayer.getPlayerName());
+			if(curPlayer.getPlayerName().toLowerCase().equals(playerType.toLowerCase())) {
 				return curPlayer;
 			}
 		}
