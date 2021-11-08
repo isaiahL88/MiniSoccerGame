@@ -15,5 +15,9 @@ public class PlayerStatistics {
     public void setStatistics(Integer stats) {
         this.stats = stats;
     }
+    
+    public String toString() {
+    	return "" + this.stats;
+    }
 
 }
