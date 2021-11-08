@@ -3,7 +3,7 @@ package model.players;
 import java.awt.Color;
 
 public class PlayerFactory {
-	public GamePlayer getPlayer(String playerType) {
+	static public GamePlayer getPlayer(String playerType) {
 		if(playerType.equals("goalkeeper")) {
 			return new Goalkeeper("Goalkeeper", new Color(200,100,200));
 		}else if(playerType.equals("striker")) {
