@@ -4,9 +4,9 @@ import java.util.Iterator;
 import java.util.List;
 
 public class PlayerCollectionIterator implements Iterator<GamePlayer>{
-	List<GamePlayer> players;
-	int current;
-	int cap;
+	private List<GamePlayer> players;
+	private int current;
+	private int cap;
 	PlayerCollectionIterator(PlayerCollection players){
 		this.players = players.getList();
 		cap = players.getList().size();
