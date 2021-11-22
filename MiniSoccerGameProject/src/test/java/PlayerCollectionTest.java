@@ -1,9 +1,6 @@
-package test;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
-import org.junit.Assert;
 import model.players.PlayerCollection;
 import model.players.PlayerFactory;
 import model.players.GamePlayer;

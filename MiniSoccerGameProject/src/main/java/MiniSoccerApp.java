@@ -1,4 +1,3 @@
-package main;
 import controller.GameListener;
 import controller.MenubarListener;
 import view.GameMenuBar;
